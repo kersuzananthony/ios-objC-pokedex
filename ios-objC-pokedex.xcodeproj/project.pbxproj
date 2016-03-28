@@ -16,6 +16,7 @@
 		DC7297C41CA8EEAC00EEE312 /* pokemon.csv in Resources */ = {isa = PBXBuildFile; fileRef = DC7297C31CA8EEAC00EEE312 /* pokemon.csv */; };
 		DC7297C71CA8EF0400EEE312 /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DC7297C51CA8EF0400EEE312 /* music.mp3 */; };
 		DC7297C81CA8EF0400EEE312 /* pokemon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC7297C61CA8EF0400EEE312 /* pokemon.ttf */; };
+		DC7297CB1CA8EF6200EEE312 /* Pokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7297CA1CA8EF6200EEE312 /* Pokemon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		DC7297C31CA8EEAC00EEE312 /* pokemon.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pokemon.csv; sourceTree = "<group>"; };
 		DC7297C51CA8EF0400EEE312 /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
 		DC7297C61CA8EF0400EEE312 /* pokemon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pokemon.ttf; sourceTree = "<group>"; };
+		DC7297C91CA8EF6200EEE312 /* Pokemon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pokemon.h; sourceTree = "<group>"; };
+		DC7297CA1CA8EF6200EEE312 /* Pokemon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pokemon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,15 +67,13 @@
 		DC7297A61CA8ED7300EEE312 /* ios-objC-pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				DC7297BE1CA8ED7C00EEE312 /* Models */,
+				DC7297BF1CA8ED8200EEE312 /* Views */,
+				DC7297C01CA8ED8800EEE312 /* Controllers */,
 				DC7297C21CA8EE9700EEE312 /* Resources */,
 				DC7297C11CA8ED9300EEE312 /* Utils */,
-				DC7297C01CA8ED8800EEE312 /* Controllers */,
-				DC7297BF1CA8ED8200EEE312 /* Views */,
-				DC7297BE1CA8ED7C00EEE312 /* Models */,
 				DC7297AA1CA8ED7300EEE312 /* AppDelegate.h */,
 				DC7297AB1CA8ED7300EEE312 /* AppDelegate.m */,
-				DC7297AD1CA8ED7300EEE312 /* ViewController.h */,
-				DC7297AE1CA8ED7300EEE312 /* ViewController.m */,
 				DC7297B01CA8ED7300EEE312 /* Main.storyboard */,
 				DC7297B31CA8ED7300EEE312 /* Assets.xcassets */,
 				DC7297B51CA8ED7300EEE312 /* LaunchScreen.storyboard */,
@@ -93,6 +94,8 @@
 		DC7297BE1CA8ED7C00EEE312 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DC7297C91CA8EF6200EEE312 /* Pokemon.h */,
+				DC7297CA1CA8EF6200EEE312 /* Pokemon.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -107,6 +110,8 @@
 		DC7297C01CA8ED8800EEE312 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DC7297AD1CA8ED7300EEE312 /* ViewController.h */,
+				DC7297AE1CA8ED7300EEE312 /* ViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC7297AF1CA8ED7300EEE312 /* ViewController.m in Sources */,
+				DC7297CB1CA8EF6200EEE312 /* Pokemon.m in Sources */,
 				DC7297AC1CA8ED7300EEE312 /* AppDelegate.m in Sources */,
 				DC7297A91CA8ED7300EEE312 /* main.m in Sources */,
 			);
