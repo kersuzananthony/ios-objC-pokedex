@@ -10,11 +10,14 @@
 #import "AVFoundation/AVFoundation.h"
 #import "Pokemon.h"
 
-@interface ViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface ViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate>
 
 @property(nonatomic, strong) NSMutableArray<Pokemon *> *pokemons;
+@property(nonatomic, strong) NSMutableArray<Pokemon *> *filteredPokemons;
+@property(nonatomic) BOOL isInSearchMode;
 @property(nonatomic, strong) AVAudioPlayer *musicPlayer;
 @property(nonatomic, weak) IBOutlet UICollectionView *collectionView;
+@property(nonatomic, weak) IBOutlet UISearchBar *searchBar;
 
 - (IBAction)musicButtonPressed:(UIButton *)sender;
 

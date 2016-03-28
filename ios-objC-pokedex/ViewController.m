@@ -25,9 +25,14 @@
     [super viewDidLoad];
     
     self.pokemons = [[NSMutableArray alloc]init];
+    self.filteredPokemons = [[NSMutableArray alloc]init];
+    self.isInSearchMode = NO;
     
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
+    self.searchBar.delegate = self;
+    
+    self.searchBar.returnKeyType = UIReturnKeyDone;
     
     [self parsePokemonCSVFile];
     [self initAudio];
@@ -68,14 +73,14 @@
         pokeCell = [[PokeCell alloc]init];
     }
     
-    Pokemon *pokemon = [self.pokemons objectAtIndex:indexPath.row];
+    Pokemon *pokemon = self.isInSearchMode ? [self.filteredPokemons objectAtIndex:indexPath.row] : [self.pokemons objectAtIndex:indexPath.row];
     [pokeCell configureCellWithPokemon:pokemon];
     
     return pokeCell;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.pokemons count];
+    return self.isInSearchMode ? self.filteredPokemons.count : self.pokemons.count;
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -90,6 +95,25 @@
         [self.musicPlayer play];
         sender.alpha = 1.0;
     }
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    if (searchText == nil || [searchText  isEqual: @""]) {
+        self.isInSearchMode = NO;
+        self.filteredPokemons = self.pokemons;
+        [searchBar performSelector:@selector(resignFirstResponder) withObject:nil afterDelay:0.1];
+    } else {
+        self.isInSearchMode = YES;
+        NSString *searchString = [searchText lowercaseString];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name CONTAINS %@", searchString];
+        self.filteredPokemons = (NSMutableArray *) [self.pokemons filteredArrayUsingPredicate: predicate];
+    }
+    
+    [self.collectionView reloadData];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [self.view endEditing:YES];
 }
 
 @end
