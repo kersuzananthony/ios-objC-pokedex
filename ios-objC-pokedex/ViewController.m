@@ -30,6 +30,7 @@
     self.collectionView.dataSource = self;
     
     [self parsePokemonCSVFile];
+    [self initAudio];
 }
 
 - (void)parsePokemonCSVFile {
@@ -45,6 +46,15 @@
         Pokemon *pokemon = [[Pokemon alloc]initWithName:pokemonName pokedexId:pokemonId];
         [self.pokemons addObject:pokemon];
     }
+}
+
+- (void)initAudio {
+    NSString *musicPath = [[NSBundle mainBundle]pathForResource:@"music" ofType:@"mp3"];
+    
+    self.musicPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:[NSURL URLWithString:musicPath] error:nil];
+    [self.musicPlayer prepareToPlay];
+    self.musicPlayer.numberOfLoops = -1;
+    [self.musicPlayer play];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -70,6 +80,16 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     return CGSizeMake(105.0, 105.0);
+}
+
+- (IBAction)musicButtonPressed:(UIButton *)sender {
+    if ([self.musicPlayer isPlaying]) {
+        [self.musicPlayer stop];
+        sender.alpha = 0.2;
+    } else {
+        [self.musicPlayer play];
+        sender.alpha = 1.0;
+    }
 }
 
 @end

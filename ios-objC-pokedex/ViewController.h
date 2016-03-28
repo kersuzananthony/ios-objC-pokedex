@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AVFoundation/AVFoundation.h"
 #import "Pokemon.h"
 
 @interface ViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property(nonatomic, strong) NSMutableArray<Pokemon *> *pokemons;
+@property(nonatomic, strong) AVAudioPlayer *musicPlayer;
 @property(nonatomic, weak) IBOutlet UICollectionView *collectionView;
+
+- (IBAction)musicButtonPressed:(UIButton *)sender;
 
 @end
 

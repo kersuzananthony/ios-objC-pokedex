@@ -43,6 +43,9 @@
                                             <constraint firstAttribute="height" constant="25" id="w3g-9F-qkO"/>
                                         </constraints>
                                         <state key="normal" image="music"/>
+                                        <connections>
+                                            <action selector="musicButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W8N-RF-CT5"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.70588235294117641" green="0.48627450980392156" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>

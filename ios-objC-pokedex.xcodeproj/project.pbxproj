@@ -20,6 +20,7 @@
 		DC7297CE1CA8F6F200EEE312 /* PokeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7297CD1CA8F6F200EEE312 /* PokeCell.m */; };
 		DC7297D41CA9038C00EEE312 /* CSV.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7297D31CA9038C00EEE312 /* CSV.m */; };
 		DC7297DA1CA9451B00EEE312 /* NSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7297D91CA9451B00EEE312 /* NSArray.m */; };
+		DC7297DC1CA94DF500EEE312 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC7297DB1CA94DF500EEE312 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		DC7297D31CA9038C00EEE312 /* CSV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSV.m; sourceTree = "<group>"; };
 		DC7297D81CA9451B00EEE312 /* NSArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArray.h; sourceTree = "<group>"; };
 		DC7297D91CA9451B00EEE312 /* NSArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArray.m; sourceTree = "<group>"; };
+		DC7297DB1CA94DF500EEE312 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC7297DC1CA94DF500EEE312 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +63,7 @@
 		DC72979B1CA8ED7300EEE312 = {
 			isa = PBXGroup;
 			children = (
+				DC7297DB1CA94DF500EEE312 /* AVFoundation.framework */,
 				DC7297A61CA8ED7300EEE312 /* ios-objC-pokedex */,
 				DC7297A51CA8ED7300EEE312 /* Products */,
 			);

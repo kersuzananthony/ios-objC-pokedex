@@ -21,7 +21,6 @@
     self.pokemon = aPokemon;
     
     self.nameLabel.text = [NSString stringWithFormat:@"%@", self.pokemon.name];
-    NSLog(@"Pokemon Id is %@", self.pokemon.pokedexId);
     self.thumbImage.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", self.pokemon.pokedexId]];
 }
 
