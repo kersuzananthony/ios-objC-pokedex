@@ -17,6 +17,7 @@
 		DC7297C71CA8EF0400EEE312 /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DC7297C51CA8EF0400EEE312 /* music.mp3 */; };
 		DC7297C81CA8EF0400EEE312 /* pokemon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC7297C61CA8EF0400EEE312 /* pokemon.ttf */; };
 		DC7297CB1CA8EF6200EEE312 /* Pokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7297CA1CA8EF6200EEE312 /* Pokemon.m */; };
+		DC7297CE1CA8F6F200EEE312 /* PokeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7297CD1CA8F6F200EEE312 /* PokeCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		DC7297C61CA8EF0400EEE312 /* pokemon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pokemon.ttf; sourceTree = "<group>"; };
 		DC7297C91CA8EF6200EEE312 /* Pokemon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pokemon.h; sourceTree = "<group>"; };
 		DC7297CA1CA8EF6200EEE312 /* Pokemon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pokemon.m; sourceTree = "<group>"; };
+		DC7297CC1CA8F6F200EEE312 /* PokeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokeCell.h; sourceTree = "<group>"; };
+		DC7297CD1CA8F6F200EEE312 /* PokeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokeCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,8 @@
 		DC7297BF1CA8ED8200EEE312 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DC7297CC1CA8F6F200EEE312 /* PokeCell.h */,
+				DC7297CD1CA8F6F200EEE312 /* PokeCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC7297CE1CA8F6F200EEE312 /* PokeCell.m in Sources */,
 				DC7297AF1CA8ED7300EEE312 /* ViewController.m in Sources */,
 				DC7297CB1CA8EF6200EEE312 /* Pokemon.m in Sources */,
 				DC7297AC1CA8ED7300EEE312 /* AppDelegate.m in Sources */,
