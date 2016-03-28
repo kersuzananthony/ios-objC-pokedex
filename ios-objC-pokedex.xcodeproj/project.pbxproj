@@ -21,6 +21,7 @@
 		DC7297D41CA9038C00EEE312 /* CSV.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7297D31CA9038C00EEE312 /* CSV.m */; };
 		DC7297DA1CA9451B00EEE312 /* NSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7297D91CA9451B00EEE312 /* NSArray.m */; };
 		DC7297DC1CA94DF500EEE312 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC7297DB1CA94DF500EEE312 /* AVFoundation.framework */; };
+		DC7297DF1CA9592300EEE312 /* PokeDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7297DE1CA9592300EEE312 /* PokeDetailVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,8 @@
 		DC7297D81CA9451B00EEE312 /* NSArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArray.h; sourceTree = "<group>"; };
 		DC7297D91CA9451B00EEE312 /* NSArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArray.m; sourceTree = "<group>"; };
 		DC7297DB1CA94DF500EEE312 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		DC7297DD1CA9592300EEE312 /* PokeDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokeDetailVC.h; sourceTree = "<group>"; };
+		DC7297DE1CA9592300EEE312 /* PokeDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokeDetailVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,8 @@
 			children = (
 				DC7297AD1CA8ED7300EEE312 /* ViewController.h */,
 				DC7297AE1CA8ED7300EEE312 /* ViewController.m */,
+				DC7297DD1CA9592300EEE312 /* PokeDetailVC.h */,
+				DC7297DE1CA9592300EEE312 /* PokeDetailVC.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 				DC7297DA1CA9451B00EEE312 /* NSArray.m in Sources */,
 				DC7297CE1CA8F6F200EEE312 /* PokeCell.m in Sources */,
 				DC7297AF1CA8ED7300EEE312 /* ViewController.m in Sources */,
+				DC7297DF1CA9592300EEE312 /* PokeDetailVC.m in Sources */,
 				DC7297CB1CA8EF6200EEE312 /* Pokemon.m in Sources */,
 				DC7297AC1CA8ED7300EEE312 /* AppDelegate.m in Sources */,
 				DC7297A91CA8ED7300EEE312 /* main.m in Sources */,

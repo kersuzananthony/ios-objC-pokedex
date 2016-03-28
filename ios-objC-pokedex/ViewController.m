@@ -79,6 +79,25 @@
     return pokeCell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    Pokemon *selectedPokemon = self.isInSearchMode ? [self.filteredPokemons objectAtIndex:indexPath.row] : [self.pokemons objectAtIndex:indexPath.row];
+    
+    [self performSegueWithIdentifier:@"PokeDetailVC" sender:selectedPokemon];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier  isEqual: @"PokeDetailVC"]) {
+        Pokemon *selectedPokemon = (Pokemon *) sender;
+        PokeDetailVC *destinationViewController = (PokeDetailVC *) segue.destinationViewController;
+        
+        if (selectedPokemon && destinationViewController) {
+            destinationViewController.pokemon = selectedPokemon;
+        } else {
+            NSLog(@"Cannot perform segue");
+        }
+    }
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.isInSearchMode ? self.filteredPokemons.count : self.pokemons.count;
 }

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AVFoundation/AVFoundation.h"
 #import "Pokemon.h"
+#import "PokeDetailVC.h"
 
 @interface ViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UISearchBarDelegate>
 
