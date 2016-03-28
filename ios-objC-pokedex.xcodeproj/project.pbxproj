@@ -58,6 +58,10 @@
 		DC7297A61CA8ED7300EEE312 /* ios-objC-pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				DC7297C11CA8ED9300EEE312 /* Utils */,
+				DC7297C01CA8ED8800EEE312 /* Controllers */,
+				DC7297BF1CA8ED8200EEE312 /* Views */,
+				DC7297BE1CA8ED7C00EEE312 /* Models */,
 				DC7297AA1CA8ED7300EEE312 /* AppDelegate.h */,
 				DC7297AB1CA8ED7300EEE312 /* AppDelegate.m */,
 				DC7297AD1CA8ED7300EEE312 /* ViewController.h */,
@@ -77,6 +81,34 @@
 				DC7297A81CA8ED7300EEE312 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DC7297BE1CA8ED7C00EEE312 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		DC7297BF1CA8ED8200EEE312 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		DC7297C01CA8ED8800EEE312 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		DC7297C11CA8ED9300EEE312 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
