@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Pokemon.h"
 
-@interface PokeCell : UITableViewCell
+@interface PokeCell : UICollectionViewCell
 
 @property(nonatomic, strong, nonnull) Pokemon *pokemon;
 @property(nonatomic, weak, nullable) IBOutlet UILabel *nameLabel;

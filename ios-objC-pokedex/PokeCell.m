@@ -12,18 +12,16 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
+    
+    self.layer.cornerRadius = 10.0;
+    self.clipsToBounds = YES;
 }
 
 - (void)configureCellWithPokemon:(Pokemon *)aPokemon {
     self.pokemon = aPokemon;
     
     self.nameLabel.text = [NSString stringWithFormat:@"%@", self.pokemon.name];
-    self.imageView.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", self.pokemon.pokedexId]];
+    self.thumbImage.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", self.pokemon.pokedexId]];
 }
 
 @end
