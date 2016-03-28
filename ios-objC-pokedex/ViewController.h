@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Pokemon.h"
 
 @interface ViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
+@property(nonatomic, strong) NSMutableArray<Pokemon *> *pokemons;
 @property(nonatomic, weak) IBOutlet UICollectionView *collectionView;
 
 @end

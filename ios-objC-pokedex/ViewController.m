@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "PokeCell.h"
 #import "Pokemon.h"
+#import "CSV.h"
 
 @interface ViewController ()
 
@@ -23,8 +24,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.pokemons = [[NSMutableArray alloc]init];
+    
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
+    
+    [self parsePokemonCSVFile];
+}
+
+- (void)parsePokemonCSVFile {
+    NSString *pokemonCSVFilePath = [[NSBundle mainBundle]pathForResource:@"pokemon" ofType:@"csv"];
+    
+    CSV *csv = [[CSV alloc]initWithContentsOfUrl:pokemonCSVFilePath];
+    NSMutableArray<NSDictionary<NSString *,NSString *> *> * rows = [csv rows];
+    
+    for (NSDictionary<NSString *, NSString *> *row in rows) {
+        NSString *pokemonName = [row valueForKey:@"identifier"];
+        NSString *pokemonId = (NSString *) [row valueForKey:@"id"];
+        
+        Pokemon *pokemon = [[Pokemon alloc]initWithName:pokemonName pokedexId:pokemonId];
+        [self.pokemons addObject:pokemon];
+    }
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -38,14 +58,14 @@
         pokeCell = [[PokeCell alloc]init];
     }
     
-    Pokemon *pokemon = [[Pokemon alloc]initWithName:@"Test" pokedexId:[NSNumber numberWithInteger:455]];
+    Pokemon *pokemon = [self.pokemons objectAtIndex:indexPath.row];
     [pokeCell configureCellWithPokemon:pokemon];
     
     return pokeCell;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 718;
+    return [self.pokemons count];
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {

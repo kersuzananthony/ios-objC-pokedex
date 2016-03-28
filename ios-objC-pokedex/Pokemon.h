@@ -11,8 +11,8 @@
 @interface Pokemon : NSObject
 
 @property(nonatomic, strong, readonly) NSString *name;
-@property(nonatomic, strong, readonly) NSNumber *pokedexId;
+@property(nonatomic, strong, readonly) NSString *pokedexId;
 
-- (id)initWithName:(NSString *)aName pokedexId:(NSNumber *)aPokedexId;
+- (id)initWithName:(NSString *)aName pokedexId:(NSString *)aPokedexId;
 
 @end

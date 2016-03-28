@@ -11,7 +11,7 @@
 @implementation Pokemon
 
 
--(id)initWithName:(NSString *)aName pokedexId:(NSNumber *)aPokedexId {
+-(id)initWithName:(NSString *)aName pokedexId:(NSString *)aPokedexId {
     
     if (self = [super init]) {
         _name = [aName capitalizedString];

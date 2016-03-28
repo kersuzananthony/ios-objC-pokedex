@@ -18,6 +18,8 @@
 		DC7297C81CA8EF0400EEE312 /* pokemon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC7297C61CA8EF0400EEE312 /* pokemon.ttf */; };
 		DC7297CB1CA8EF6200EEE312 /* Pokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7297CA1CA8EF6200EEE312 /* Pokemon.m */; };
 		DC7297CE1CA8F6F200EEE312 /* PokeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7297CD1CA8F6F200EEE312 /* PokeCell.m */; };
+		DC7297D41CA9038C00EEE312 /* CSV.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7297D31CA9038C00EEE312 /* CSV.m */; };
+		DC7297DA1CA9451B00EEE312 /* NSArray.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7297D91CA9451B00EEE312 /* NSArray.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,10 @@
 		DC7297CA1CA8EF6200EEE312 /* Pokemon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pokemon.m; sourceTree = "<group>"; };
 		DC7297CC1CA8F6F200EEE312 /* PokeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PokeCell.h; sourceTree = "<group>"; };
 		DC7297CD1CA8F6F200EEE312 /* PokeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PokeCell.m; sourceTree = "<group>"; };
+		DC7297D21CA9038C00EEE312 /* CSV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSV.h; sourceTree = "<group>"; };
+		DC7297D31CA9038C00EEE312 /* CSV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSV.m; sourceTree = "<group>"; };
+		DC7297D81CA9451B00EEE312 /* NSArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArray.h; sourceTree = "<group>"; };
+		DC7297D91CA9451B00EEE312 /* NSArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArray.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +130,10 @@
 		DC7297C11CA8ED9300EEE312 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				DC7297D21CA9038C00EEE312 /* CSV.h */,
+				DC7297D31CA9038C00EEE312 /* CSV.m */,
+				DC7297D81CA9451B00EEE312 /* NSArray.h */,
+				DC7297D91CA9451B00EEE312 /* NSArray.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -211,6 +221,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC7297D41CA9038C00EEE312 /* CSV.m in Sources */,
+				DC7297DA1CA9451B00EEE312 /* NSArray.m in Sources */,
 				DC7297CE1CA8F6F200EEE312 /* PokeCell.m in Sources */,
 				DC7297AF1CA8ED7300EEE312 /* ViewController.m in Sources */,
 				DC7297CB1CA8EF6200EEE312 /* Pokemon.m in Sources */,
