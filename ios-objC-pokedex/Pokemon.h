@@ -7,6 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AFNetworking.h>
+
+#define URL_BASE "http://pokeapi.co"
+#define URL_POKEMON "/api/v1/pokemon/"
+
+typedef void (^onComplete)();
 
 @interface Pokemon : NSObject
 
@@ -20,7 +26,9 @@
 @property(nonatomic, strong, readonly) NSString *nextEvoId;
 @property(nonatomic, strong, readonly) NSString *nextEvoLvl;
 @property(nonatomic, strong, readonly) NSString *nextEvoName;
+@property(nonatomic, strong) NSString *pokemonURL;
 
 - (id)initWithName:(NSString *)aName pokedexId:(NSString *)aPokedexId;
+- (void)downloadPokemonDetails:(onComplete)completionHandler;
 
 @end
