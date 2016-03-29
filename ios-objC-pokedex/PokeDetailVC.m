@@ -22,6 +22,9 @@
     [super viewDidLoad];
     
     self.nameLabel.text = self.pokemon.name;
+    self.thumbImage.image = [UIImage imageNamed:self.pokemon.pokedexId];
+    self.currentEvoImage.image = [UIImage imageNamed:self.pokemon.pokedexId];
+    self.pokedexIdLabel.text = self.pokemon.pokedexId;
 }
 
 - (IBAction)backPressed:(UIButton *)sender {
