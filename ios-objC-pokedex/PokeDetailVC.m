@@ -22,12 +22,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.movesTableView.delegate = self;
+    self.movesTableView.dataSource = self;
+    self.movesTableView.hidden = YES;
+    
     self.nameLabel.text = self.pokemon.name;
     self.thumbImage.image = [UIImage imageNamed:self.pokemon.pokedexId];
     self.currentEvoImage.image = [UIImage imageNamed:self.pokemon.pokedexId];
     self.pokedexIdLabel.text = self.pokemon.pokedexId;
+    
     [self.pokemon downloadPokemonDetails:^{
         [self updateUserInterface];
+    } moveCompletion:^{
+        [self.movesTableView reloadData];
     }];
 }
 
@@ -57,6 +64,41 @@
 
 - (IBAction)backPressed:(UIButton *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)segmentControlPressed:(UISegmentedControl *)sender {
+    if (sender.selectedSegmentIndex == 0) {
+        self.movesTableView.hidden = YES;
+        self.bioStackView.hidden = NO;
+        self.evoIntroView.hidden = NO;
+        self.evoStackView.hidden = NO;
+    } else if (sender.selectedSegmentIndex == 1) {
+        self.movesTableView.hidden = NO;
+        self.bioStackView.hidden = YES;
+        self.evoIntroView.hidden = YES;
+        self.evoStackView.hidden = YES;
+        [self.movesTableView reloadData];
+    }
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.pokemon.moves.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    MoveCell *moveCell = (MoveCell *) [self.movesTableView dequeueReusableCellWithIdentifier:@"MoveCell" forIndexPath:indexPath];
+    
+    if (!moveCell) {
+        moveCell = [[MoveCell alloc]init];
+    }
+    
+    [moveCell configureCellWithMove:self.pokemon.moves[indexPath.row]];
+    
+    return moveCell;
 }
 
 @end

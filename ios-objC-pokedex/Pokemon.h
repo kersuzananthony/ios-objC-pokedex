@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <AFNetworking.h>
+#import "Move.h"
 
 #define URL_BASE "http://pokeapi.co"
 #define URL_POKEMON "/api/v1/pokemon/"
@@ -28,8 +29,9 @@ typedef void (^onComplete)();
 @property(nonatomic, strong, readonly) NSString *nextEvoLvl;
 @property(nonatomic, strong, readonly) NSString *nextEvoName;
 @property(nonatomic, strong) NSString *pokemonURL;
+@property(nonatomic, strong) NSMutableArray<Move *> *moves;
 
 - (id)initWithName:(NSString *)aName pokedexId:(NSString *)aPokedexId;
-- (void)downloadPokemonDetails:(onComplete)completionHandler;
+- (void)downloadPokemonDetails:(onComplete)completionHandler moveCompletion:(onComplete)moveCompletionHandler;
 
 @end

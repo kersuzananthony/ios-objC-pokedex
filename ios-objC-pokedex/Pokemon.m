@@ -18,12 +18,13 @@
         _pokedexId = aPokedexId;
         
         _pokemonURL = [NSString stringWithFormat:@"%s%s%@/", URL_BASE, URL_POKEMON, _pokedexId];
+        _moves = [[NSMutableArray alloc]init];
     }
 
     return self;
 }
 
-- (void)downloadPokemonDetails:(onComplete)completionHandler {
+- (void)downloadPokemonDetails:(onComplete)completionHandler moveCompletion:(onComplete)moveCompletionHandler {
     
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
@@ -139,11 +140,66 @@
                 
                 [descriptionDataTask resume];
             }
+            
+            // Moves
+            NSArray<NSDictionary<NSString *, NSString *> *> *movesArray = (NSArray<NSDictionary<NSString *, NSString *> *> *) [result valueForKey:@"moves"];
+            if (movesArray && movesArray.count > 0) {
+                __block NSString *moveName = @"";
+                __block NSString *moveDesc = @"";
+                __block NSString *movePower = @"";
+                __block NSString *moveAccuracy = @"";
+                
+                
+                for (int i = 0; i < movesArray.count; i++) {
+                    NSURL *moveURL = [NSURL URLWithString: [NSString stringWithFormat:@"%s%@", URL_BASE, [movesArray[i] valueForKey:@"resource_uri"]]];
+                    NSURLRequest *moveRequest = [NSURLRequest requestWithURL:moveURL];
+                    
+                    NSURLSessionDataTask *moveDataTask = [manager dataTaskWithRequest:moveRequest completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+                        
+                        NSString *name = (NSString *) [responseObject valueForKey:@"name"];
+                        if (name) {
+                            moveName = [name capitalizedString];
+                        } else {
+                            moveName = @"";
+                        }
+                        
+                        NSString *description = (NSString *) [responseObject valueForKey:@"description"];
+                        if (description) {
+                            moveDesc = description;
+                        } else {
+                            moveDesc = @"";
+                        }
+                        
+                        NSString *power = (NSString *) [responseObject valueForKey:@"power"];
+                        if (power) {
+                            movePower = power;
+                        } else {
+                            movePower = @"";
+                        }
+                        
+                        NSString *accuracy = (NSString *) [responseObject valueForKey:@"accuracy"];
+                        if (accuracy) {
+                            moveAccuracy = accuracy;
+                        } else {
+                            moveAccuracy = @"";
+                        }
+                        
+                        Move *newMove = [[Move alloc]initWithName:moveName description:moveDesc power:movePower accuracy:moveAccuracy];
+                        [self.moves addObject:newMove];
+                        
+                        // End loop and send callback
+                        if (i + 1 == movesArray.count) {
+                            moveCompletionHandler();
+                        }
+                        
+                    }];
+                    
+                    [moveDataTask resume];
+                }
+            }
         }
     
     }];
-    
-    
     
     [dataTask resume];
 }

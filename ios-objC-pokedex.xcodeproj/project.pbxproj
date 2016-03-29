@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DC70E4001CAA453A00DF84B1 /* libAFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC70E3FF1CAA453A00DF84B1 /* libAFNetworking.a */; };
+		DC70E4031CAA664A00DF84B1 /* MoveCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC70E4021CAA664A00DF84B1 /* MoveCell.m */; };
+		DC70E4061CAA66C100DF84B1 /* Move.m in Sources */ = {isa = PBXBuildFile; fileRef = DC70E4051CAA66C100DF84B1 /* Move.m */; };
 		DC7297A91CA8ED7300EEE312 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7297A81CA8ED7300EEE312 /* main.m */; };
 		DC7297AC1CA8ED7300EEE312 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7297AB1CA8ED7300EEE312 /* AppDelegate.m */; };
 		DC7297AF1CA8ED7300EEE312 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7297AE1CA8ED7300EEE312 /* ViewController.m */; };
@@ -30,6 +32,10 @@
 		3FDEBBDA1726F4B3732932CA /* libPods-ios-objC-pokedex.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ios-objC-pokedex.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D2BEE610741B18D6D62D198 /* Pods-ios-objC-pokedex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-objC-pokedex.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-objC-pokedex/Pods-ios-objC-pokedex.release.xcconfig"; sourceTree = "<group>"; };
 		DC70E3FF1CAA453A00DF84B1 /* libAFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libAFNetworking.a; path = "Pods/../build/Debug-iphoneos/libAFNetworking.a"; sourceTree = "<group>"; };
+		DC70E4011CAA664A00DF84B1 /* MoveCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveCell.h; sourceTree = "<group>"; };
+		DC70E4021CAA664A00DF84B1 /* MoveCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveCell.m; sourceTree = "<group>"; };
+		DC70E4041CAA66C100DF84B1 /* Move.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Move.h; sourceTree = "<group>"; };
+		DC70E4051CAA66C100DF84B1 /* Move.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Move.m; sourceTree = "<group>"; };
 		DC7297A41CA8ED7300EEE312 /* ios-objC-pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-objC-pokedex.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC7297A81CA8ED7300EEE312 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DC7297AA1CA8ED7300EEE312 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -138,6 +144,8 @@
 			children = (
 				DC7297C91CA8EF6200EEE312 /* Pokemon.h */,
 				DC7297CA1CA8EF6200EEE312 /* Pokemon.m */,
+				DC70E4041CAA66C100DF84B1 /* Move.h */,
+				DC70E4051CAA66C100DF84B1 /* Move.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -147,6 +155,8 @@
 			children = (
 				DC7297CC1CA8F6F200EEE312 /* PokeCell.h */,
 				DC7297CD1CA8F6F200EEE312 /* PokeCell.m */,
+				DC70E4011CAA664A00DF84B1 /* MoveCell.h */,
+				DC70E4021CAA664A00DF84B1 /* MoveCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -307,6 +317,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC70E4061CAA66C100DF84B1 /* Move.m in Sources */,
+				DC70E4031CAA664A00DF84B1 /* MoveCell.m in Sources */,
 				DC7297D41CA9038C00EEE312 /* CSV.m in Sources */,
 				DC7297DA1CA9451B00EEE312 /* NSArray.m in Sources */,
 				DC7297CE1CA8F6F200EEE312 /* PokeCell.m in Sources */,
