@@ -72,7 +72,6 @@
             // Types
             NSArray<NSDictionary<NSString *, NSString *> *> *types = (NSArray<NSDictionary<NSString *, NSString *> *> *) [result valueForKey:@"types"];
             if (types && types.count > 0) {
-                NSLog(@"Number of types %lu", (unsigned long)types.count);
                 NSString *firstType = [types[0] valueForKey:@"name"];
                 if (firstType) {
                     _type = [firstType capitalizedString];
@@ -83,9 +82,7 @@
                 if (types.count > 1) {
                     for (int i = 1; i < types.count; i++) {
                         NSString *name = [[types[i] valueForKey:@"name"] capitalizedString];
-                        NSLog(@"Name!!! : %@", name);
                         if (name) {
-                            
                             _type = [_type stringByAppendingString: [NSString stringWithFormat:@"/%@", name]];
                         }
                     }
@@ -94,40 +91,61 @@
                 _type = @"";
             }
             
-            NSLog(@"Height %@", self.height);
-            NSLog(@"Weight %@", self.weight);
-            NSLog(@"Attack %@", self.attack);
-            NSLog(@"Defense %@", self.defense);
-            NSLog(@"Type %@", self.type);
+            // Evolutions
+            NSArray<NSDictionary<NSString *, id> *> *evolutionsArray = (NSArray<NSDictionary<NSString *, id> *> *) [result valueForKey:@"evolutions"];
             
-            completionHandler();
+            if (evolutionsArray && evolutionsArray.count > 0) {
+                NSString *toEvolution = [(NSString *) evolutionsArray[0] valueForKey:@"to"];
+                if (toEvolution) {
+                    NSRange megaLocation = [toEvolution rangeOfString:@"mega"];
+                    if (megaLocation.location == NSNotFound) {
+                        NSString *uri = [(NSString *) evolutionsArray[0] valueForKey:@"resource_uri"];
+                        NSString *evolutionId = [uri stringByReplacingOccurrencesOfString:@"api/v1/pokemon" withString:@""];
+                        _nextEvoId = [evolutionId stringByReplacingOccurrencesOfString:@"/" withString:@""];
+                        _nextEvoName = toEvolution;
+                        _nextEvoLvl = (NSString *) [evolutionsArray[0] valueForKey:@"level"];
+                    }
+                } else {
+                    _nextEvoId = @"";
+                    _nextEvoName = @"";
+                    _nextEvoLvl = @"";
+                }
+            }
+            
+            // Descriptions
+            NSArray<NSDictionary<NSString *, NSString *> *> *descriptionsArray = (NSArray<NSDictionary<NSString *, NSString *> *> *) [result valueForKey:@"descriptions"];
+            
+            if (descriptionsArray && descriptionsArray.count > 0) {
+                NSString *url = [NSString stringWithFormat:@"%s%@", URL_BASE, [descriptionsArray[0] valueForKey:@"resource_uri"]];
+                NSURL *descriptionUrl = [NSURL URLWithString:url];
+                NSURLRequest *descriptionRequest = [NSURLRequest requestWithURL:descriptionUrl];
+                
+                NSURLSessionDataTask *descriptionDataTask = [manager dataTaskWithRequest:descriptionRequest completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+                    
+                    NSDictionary<NSString *, id> *result = (NSDictionary<NSString *, id> *) responseObject;
+                    if (responseObject) {
+                        NSString *pokeDescription = [(NSString *) result valueForKey:@"description"];
+                        if (pokeDescription) {
+                            _pokeDescription = pokeDescription;
+                        } else {
+                            _pokeDescription = @"";
+                        }
+                    } else {
+                        _pokeDescription = @"";
+                    }
+                    
+                    completionHandler();
+                }];
+                
+                [descriptionDataTask resume];
+            }
         }
+    
     }];
+    
     
     
     [dataTask resume];
 }
-
-
-//    +
-//    +                if let types = dict["types"] as? Array<Dictionary<String, String>> where types.count > 0 {
-//        +                    if let type = types[0]["name"] {
-//            +                        self._type = type.capitalizedString
-//            +                    }
-//        +
-//        +                    if types.count > 1 {
-//            +                        for x in 1 ..< types.count {
-//                +                            if let name = types[x]["name"] {
-//                    +                                self._type! += "/\(name.capitalizedString)"
-//                    +                            }
-//                +                        }
-//            +                    }
-//        +                } else {
-//            +                    self._type = ""
-//            +                }
-//    +                
-//    +                print(self._type)
-//    +            }
-//+        }
 
 @end

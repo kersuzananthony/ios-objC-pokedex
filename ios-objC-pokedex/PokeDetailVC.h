@@ -23,6 +23,7 @@
 @property(weak, nonatomic) IBOutlet UIImageView *currentEvoImage;
 @property(weak, nonatomic) IBOutlet UIImageView *nextEvoImage;
 @property(weak, nonatomic) IBOutlet UILabel *nextEvoLabel;
+@property (weak, nonatomic) IBOutlet UILabel *pokeDescriptionLabel;
 
 - (IBAction)backPressed:(UIButton *)sender;
 

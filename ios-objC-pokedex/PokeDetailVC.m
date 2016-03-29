@@ -37,7 +37,22 @@
     self.heightLabel.text = [NSString stringWithFormat:@"%@", self.pokemon.height];
     self.weightLabel.text = [NSString stringWithFormat:@"%@", self.pokemon.weight];
     self.typeLabel.text = [NSString stringWithFormat:@"%@", self.pokemon.type];
-
+    self.pokeDescriptionLabel.text = [NSString stringWithFormat:@"%@", self.pokemon.pokeDescription];
+    
+    if (self.pokemon.nextEvoId && ![self.pokemon.nextEvoId isEqual:@""]) {
+        self.nextEvoImage.image = [UIImage imageNamed: [NSString stringWithFormat:@"%@", self.pokemon.nextEvoId]];
+        self.nextEvoImage.hidden = NO;
+        NSString *nextEvolutionText = [NSString stringWithFormat:@"Next Evolution: %@", self.pokemon.nextEvoName];
+        
+        if (self.pokemon.nextEvoLvl && ![self.pokemon.nextEvoLvl isEqual:@""]) {
+            nextEvolutionText = [nextEvolutionText stringByAppendingString:[NSString stringWithFormat:@"%@", self.pokemon.nextEvoLvl]];
+        }
+        
+        self.nextEvoLabel.text = nextEvolutionText;
+    } else {
+        self.nextEvoLabel.text = @"No Evolution";
+        self.nextEvoImage.hidden = YES;
+    }
 }
 
 - (IBAction)backPressed:(UIButton *)sender {

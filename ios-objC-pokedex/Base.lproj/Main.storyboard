@@ -431,6 +431,7 @@
                         <outlet property="nameLabel" destination="ixy-IW-7Jt" id="sZl-LE-a2g"/>
                         <outlet property="nextEvoImage" destination="K3P-Bw-1Ah" id="MgQ-dM-CgF"/>
                         <outlet property="nextEvoLabel" destination="ApY-mp-x6E" id="lHq-6r-2ZZ"/>
+                        <outlet property="pokeDescriptionLabel" destination="vFb-uC-s80" id="AQH-ew-4KT"/>
                         <outlet property="pokedexIdLabel" destination="Iul-8b-Fbf" id="Mc4-pF-SDW"/>
                         <outlet property="thumbImage" destination="95a-Jh-Czz" id="MD9-xh-TAY"/>
                         <outlet property="typeLabel" destination="jC8-62-MKH" id="JAH-Od-EbQ"/>

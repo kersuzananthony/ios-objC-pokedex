@@ -23,6 +23,7 @@ typedef void (^onComplete)();
 @property(nonatomic, strong, readonly) NSString *height;
 @property(nonatomic, strong, readonly) NSString *attack;
 @property(nonatomic, strong, readonly) NSString *defense;
+@property(nonatomic, strong, readonly) NSString *pokeDescription;
 @property(nonatomic, strong, readonly) NSString *nextEvoId;
 @property(nonatomic, strong, readonly) NSString *nextEvoLvl;
 @property(nonatomic, strong, readonly) NSString *nextEvoName;
